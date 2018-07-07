@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title">40sp</dimen>
+    <dimen name="score_size">30sp</dimen>
+    <dimen name="score">25sp</dimen>
+</resources>
