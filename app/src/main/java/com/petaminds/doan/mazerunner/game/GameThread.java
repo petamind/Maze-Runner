@@ -23,7 +23,7 @@ public class GameThread extends Thread {
 
     public void increaseSpeed() {
         this.speed++;
-        this.delay = 1000 / 30;
+        this.delay = 1000 / speed;
     }
 
     @Override

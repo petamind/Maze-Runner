@@ -13,10 +13,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_marginTop="8dp"
         android:padding="8dp"
         android:layout_marginBottom="8dp"
         android:textAlignment="center"
@@ -27,6 +26,7 @@
         android:id="@+id/score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         android:text="SCORE: 0" />
 
 </android.support.constraint.ConstraintLayout>

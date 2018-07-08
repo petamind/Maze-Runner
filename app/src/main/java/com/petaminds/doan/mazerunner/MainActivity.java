@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -32,13 +33,14 @@ public class MainActivity extends AppCompatActivity implements Runnable, GameAct
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_main);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         Constants.SCREEN_WIDTH = displayMetrics.widthPixels;
         Constants.SCREEN_HEIGHT = displayMetrics.heightPixels;
-        setContentView(R.layout.activity_main);
 
         game = findViewById(R.id.game);
         textView = findViewById(R.id.score);
@@ -95,7 +97,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, GameAct
                 }
             }
             if (game != null) {
-                textView.setText("SCORE: " + game.getScore());
+                String score = "SCORE: " + game.getScore();
+                textView.setText(score);
             }
 
             if (game.isGameover()) {

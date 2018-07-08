@@ -57,4 +57,12 @@ public class GameOverDialog extends Dialog {
             }
         });
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(!hasFocus){
+            dismiss();
+        }
+    }
 }
