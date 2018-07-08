@@ -5,8 +5,8 @@ import android.view.SurfaceHolder;
 
 public class GameThread extends Thread {
 
-    private int speed = 30;
-    private int delay;
+    private final int FPS = 30;
+    private final int delay = 1000/30;//frame rate
     private final SurfaceHolder surfaceHolder;
     private GamePanelView gamePanel;
     private boolean running;
@@ -21,10 +21,6 @@ public class GameThread extends Thread {
         this.running = running;
     }
 
-    public void increaseSpeed() {
-        this.speed++;
-        this.delay = 1000 / speed;
-    }
 
     @Override
     public void run() {

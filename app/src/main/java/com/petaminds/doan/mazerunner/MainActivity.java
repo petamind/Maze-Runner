@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements Runnable, GameAct
     private GamePanelView game;
     private TextView textView;
     private boolean playing;
+    private StartDialog startDialog;
+    private GameOverDialog goDialog;
 
     private Handler gameHandler = new Handler() {
         @Override
@@ -76,13 +78,27 @@ public class MainActivity extends AppCompatActivity implements Runnable, GameAct
     }
 
     private void showStartDialog() {
-        StartDialog startDialog = new StartDialog(this);
-        startDialog.show();
+         if(startDialog == null){
+             startDialog = new StartDialog(this);
+         }
+
+         if(!startDialog.isShowing())
+
+         {
+             startDialog.show();
+         }
     }
 
     private void showGameOverDialog() {
-        GameOverDialog goDialog = new GameOverDialog(this);
-        goDialog.show();
+         if(goDialog == null){
+            goDialog = new GameOverDialog(this);
+        }
+
+        if(!goDialog.isShowing())
+
+        {
+            goDialog.show();
+        }
     }
 
 

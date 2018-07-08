@@ -98,8 +98,8 @@ public class GamePanelView extends SurfaceView implements GameActionListener {
                 player.update(playerPoint);
                 obstacleManager.update();
                 this.score++;
-                if (score % 200 == 0) {
-                    thread.increaseSpeed();
+                if (score % 300 == 0) {
+                    obstacleManager.increaseSpeed();
                 }
 
                 if (obstacleManager.collide(player)) {
